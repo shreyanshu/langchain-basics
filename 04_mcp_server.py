@@ -43,4 +43,5 @@ if __name__ == "__main__":
     # as a subprocess and exchange JSON-RPC packets via stdin/stdout.
     # Note: We print debug information to stderr so it does not interfere with the stdio JSON-RPC transport!
     print("Starting NebulaCore MCP Server on Stdio transport...", file=sys.stderr)
+
     mcp.run()

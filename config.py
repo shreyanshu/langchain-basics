@@ -71,7 +71,7 @@ def get_embeddings():
             from langchain_google_genai import GoogleGenerativeAIEmbeddings
             # text-embedding-004 is Google's default embedding model
             return GoogleGenerativeAIEmbeddings(
-                model="models/text-embedding-004",
+                model="gemini-embedding-2-preview",
                 google_api_key=api_key
             )
         except ImportError:

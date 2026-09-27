@@ -18,6 +18,14 @@ def get_session_history(session_id: str):
     """
     if session_id not in session_histories:
         session_histories[session_id] = InMemoryChatMessageHistory()
+
+    MAX_MESSAGE_WINDOW = 10
+
+    # Permanently slice the underlying list if it exceeds your window
+    if len(session_histories[session_id].messages) > MAX_MESSAGE_WINDOW:
+    # Retain only the most recent messages
+        session_histories[session_id].messages = session_histories[session_id].messages[-MAX_MESSAGE_WINDOW:]
+
     return session_histories[session_id]
 
 def main():
